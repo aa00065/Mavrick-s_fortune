@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1001404424037",
+    "project_id": "mavrick-sfortune",
+    "storage_bucket": "mavrick-sfortune.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001404424037:android:b99704008d009bed3fcb8c",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.MavricksFortune"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqiHeaW5wW_cnWENgPmg3-l4uSimWhXEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
