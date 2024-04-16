@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float coinsBonusMultiplier = 2;
     float coins;
     public bool GamePaused;
+    public GameObject gameovermenu;
 
     public void Awake()
     {
@@ -38,6 +39,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         GamePaused = true;
 
+    }
+    public void resumeGame()
+    {
+        Time.timeScale = 1;
+        GamePaused = false;
+
+    }
+    public void gameover()
+    {
+        PauseGame();
+        gameovermenu.SetActive(true);
     }
  
     // Start is called before the first frame update

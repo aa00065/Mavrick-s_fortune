@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Planeta
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: environment
+    uniqueID: 2081699539
+    locked: 0
+  - name: gameplay
+    uniqueID: 1001963361
     locked: 0

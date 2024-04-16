@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4438251360550834}
   - component: {fileID: 212636677202088338}
-  - component: {fileID: 114788986581967528}
   - component: {fileID: 114169341280121666}
   m_Layer: 0
   m_Name: SmallStarGroup
@@ -86,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114788986581967528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996934204811112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5c3becf113214284d50f6ff17118c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minSpeed: 0
-  maxSpeed: 0.7
-  behaviourOnExit: 1
-  limitOffScreen: 0.3
 --- !u!114 &114169341280121666
 MonoBehaviour:
   m_ObjectHideFlags: 0
