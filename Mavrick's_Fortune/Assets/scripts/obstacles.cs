@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Obstackle : MonoBehaviour
 {
+    public GameObject explosion;
+
+    void playexplosion()
+    {
+        GameObject boom = Instantiate(explosion);
+        boom.transform.position = transform.position;
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Player" )
         {
-            GameManager.instance.gameover();
+            playexplosion();
             Destroy(collision.gameObject);
-            //play particle system
             Destroy(gameObject);
+      
+            GameManager.instance.gameover();
         }
     }
 }

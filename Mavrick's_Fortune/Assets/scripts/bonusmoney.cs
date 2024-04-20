@@ -5,14 +5,14 @@ using UnityEngine;
 public class BonusMoney : MonoBehaviour
 {
     public float bonusMoney = 5;
-    // Start is called before the first frame update
+    public ParticleSystem ps;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             GameManager.instance.Addcoins(bonusMoney);
-            //play particle system
+            Instantiate(ps, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

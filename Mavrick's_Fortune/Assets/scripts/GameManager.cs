@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public TextMeshProUGUI coinsTXT;
     public float coinsBonusMultiplier = 2;
-    float coins;
+    public float coins { get; set; }
     public bool GamePaused;
     public GameObject gameovermenu;
 
@@ -31,8 +31,18 @@ public class GameManager : MonoBehaviour
     {
         _coinsToAdd = Mathf.Round(_coinsToAdd);
         coins += _coinsToAdd * coinsBonusMultiplier;
-        coinsTXT.text = coins.ToString() +"coins";
+        coinsTXT.text = coins.ToString() +" coins";
     }
+
+    public void spendcoins(int _coinsTospend)
+    {
+        
+        coins -= _coinsTospend;
+        coinsTXT.text = coins.ToString() + " coins";
+    }
+
+
+
 
     public void PauseGame()
     {
