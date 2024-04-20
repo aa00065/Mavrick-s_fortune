@@ -11,10 +11,13 @@ public class SpaceshipController : MonoBehaviour
 {
 
     public float speed = 5f;
+    public float speedlvl = 1;
     private Camera mainCamera;
     private bool isDragging = false;
     public Image fuelBarMask;
     public float maxFuel = 10;
+    public float maxFuellvl = 1;
+
     public float fuelConsumptionSpeed = 0.1f;
  
     float currentFuel;
@@ -29,7 +32,11 @@ public class SpaceshipController : MonoBehaviour
     public GameObject bulletposition;
     public GameObject bulletposition2;
     public float bulletInterval = 0.5f; // Adjust this value to change the interval between bullets
-    private float lastBulletTime = 0f;
+    public float lastBulletTime = 0f;
+
+    public ParticleSystem Ship_PS;
+
+
 
 
 
@@ -37,15 +44,15 @@ public class SpaceshipController : MonoBehaviour
     {
         currentFuel -= fuelConsumptionSpeed; // currentFuel = currentFuel - fuelConsumptionSpeed;
 
-        float fill = currentFuel / maxFuel;
+        float fill = currentFuel / (maxFuel +maxFuellvl);
         fuelBarMask.fillAmount = fill;
     }
     public void AddFuel(float _fuelRefillAmount)
     {
-        currentFuel += maxFuel * _fuelRefillAmount;
-        if (currentFuel > maxFuel)
+        currentFuel += (maxFuel +maxFuellvl) * _fuelRefillAmount;
+        if (currentFuel > maxFuel+ maxFuellvl)
         {
-            currentFuel = maxFuel;
+            currentFuel = maxFuel + maxFuellvl;
         }
     }
 
@@ -70,11 +77,13 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
-        currentFuel = maxFuel;
+        currentFuel = maxFuel + maxFuellvl;
         rb2d = GetComponent<Rigidbody2D>();
         startPos = this.transform.position.y;
         longestDstTravelled = 0;
@@ -101,6 +110,7 @@ public class SpaceshipController : MonoBehaviour
                         touchPosition.z = 0f;
                         transform.position = touchPosition;
                         ConsumeFuel();
+                        Ship_PS.Play();
 
                         if (Time.time - lastBulletTime >= bulletInterval)
                         {

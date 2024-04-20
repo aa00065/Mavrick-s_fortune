@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Start_menu.unity
     guid: f57791ba823da6f4aa4245de6be65591
   - enabled: 1
+    path: Assets/Scenes/Auth_screen.unity
+    guid: e47cc7811d7abe24b8967c5c57291f74
+  - enabled: 1
     path: Assets/Scenes/game.unity
     guid: 4d487112485ceb2408b2423533561254
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Login_screen.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/signup_screen.unity
     guid: f94a6ca93df005a4896607766b465034
   m_configObjects: {}
